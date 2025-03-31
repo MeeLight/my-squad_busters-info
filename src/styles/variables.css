@@ -1,0 +1,25 @@
+:root {
+  /* Fonts */
+  --msbi-font: 'sb';
+
+  /* Font Sizes */
+  --msbi-text-sm: 0.8rem;
+  --msbi-text-md: 1rem;
+  --msbi-text-lg: 1.25rem;
+  --msbi-text-xl: 1.5rem;
+
+  /* Background & Foreground */
+  --msbi-bgColor: #ffffff;
+  --msbi-textColor: #313131;
+
+  /* Colors */
+  --msbi-default: #404040;
+  --msbi-primary: #404040;
+  --msbi-secondary: #8b8b8b;
+  --msbi-success: #4d6afe;
+  --msbi-warning: #4d6afe;
+  --msbi-error: #4d6afe;
+
+  /* Utilities */
+  --msbi-outline: 1px solid rgba(0, 0, 0, 0.4);
+}

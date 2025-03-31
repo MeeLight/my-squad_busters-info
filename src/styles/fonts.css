@@ -1,0 +1,61 @@
+/* ----------------------
+ *  Squad Busters Fonts
+ * ----------------------
+ * - Public files: https://fankit.supercell.com/d/SKN1MzXVazxw/logo-font#/basics/font
+ */
+
+/* Italic - 400 */
+@font-face {
+  font-family: 'sb';
+  font-style: italic;
+  font-weight: 400;
+  src: url('./../assets/fonts/SquadFont1.7/SquadLatin-Italic.otf');
+}
+
+/* Regular - 400 */
+@font-face {
+  font-family: 'sb';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./../assets/fonts/SquadFont1.7/SquadLatin-Regular.otf');
+}
+
+/* Bold - 700 */
+@font-face {
+  font-family: 'sb';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./../assets/fonts/SquadFont1.7/SquadLatin-Bold.otf');
+}
+
+/* Extra Bold - 800 */
+@font-face {
+  font-family: 'sb';
+  font-style: normal;
+  font-weight: 800;
+  src: url('./../assets/fonts/SquadFont1.7/SquadLatin-ExtraBold.otf');
+}
+
+/* Extra Bold Italic - 800 */
+@font-face {
+  font-family: 'sb';
+  font-style: italic;
+  font-weight: 800;
+  src: url('./../assets/fonts/SquadFont1.7/SquadLatin-ExtraBoldItalic.otf');
+}
+
+/* Black - 900 */
+@font-face {
+  font-family: 'sb';
+  font-style: normal;
+  font-weight: 900;
+  src: url('./../assets/fonts/SquadFont1.7/SquadLatin-Black.otf');
+}
+
+/* Black Italic - 900 */
+@font-face {
+  font-family: 'sb';
+  font-style: italic;
+  font-weight: 900;
+  src: url('./../assets/fonts/SquadFont1.7/SquadLatin-BlackItalic.otf');
+}

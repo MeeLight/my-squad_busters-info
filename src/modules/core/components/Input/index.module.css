@@ -1,0 +1,6 @@
+.field {
+	caret-color: black;
+  padding: 0.5rem 0.35rem;
+  border-radius: 0.2rem;
+  outline: 1px solid black;
+}
