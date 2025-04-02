@@ -27,7 +27,7 @@ export default function HomePage() {
 
     try {
       console.log('Submit!', { playerId })
-      navigate(`/search?query=${encodeURIComponent(playerId)}`)
+      navigate(`/profile?search=${encodeURIComponent(playerId)}`)
     } catch (error) {
       console.error(error)
     }
