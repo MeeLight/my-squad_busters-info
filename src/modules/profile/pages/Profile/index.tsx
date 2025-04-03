@@ -9,14 +9,15 @@ import Link from '@core/components/Link'
 
 export default function ProfilePage() {
   const { queryParam: profileId } = useQueryParam({
-    queryParamName: 'search',
-    regex: /^\d{2}-\d{7}$/
+    name: 'id',
+    regexPattern: /^\d{2}-\d{7}$/,
+    errorPagePath: '/profile/404'
   })
 
   return (
     <>
-      <Link to='/'>Ir a inicio</Link>
       <h1>My Profile - {profileId}</h1>
+      <Link to='/'>Ir a inicio</Link>
     </>
   )
 }

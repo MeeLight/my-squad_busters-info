@@ -27,7 +27,7 @@ export default function HomePage() {
 
     try {
       console.log('Submit!', { playerId })
-      navigate(`/profile?search=${encodeURIComponent(playerId)}`)
+      navigate(`/profile?id=${encodeURIComponent(playerId)}`)
     } catch (error) {
       console.error(error)
     }
@@ -58,7 +58,7 @@ export default function HomePage() {
           }}
         />
 
-        <Button type='submit'>Buscar</Button>
+        <Button type='submit'>Search</Button>
       </form>
     </>
   )

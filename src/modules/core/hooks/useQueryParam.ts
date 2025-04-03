@@ -1,33 +1,34 @@
-import { useSearchParams } from 'react-router-dom'
+// Hooks
 import { useEffect } from 'react'
+import { useSearchParams, useNavigate } from 'react-router-dom'
 
-interface IQueryParamHook {
-  queryParamName: string
-  regex: RegExp
+interface IUseQueryParam {
+  name: string
+  regexPattern: RegExp
+  errorPagePath: string
 }
 
-interface IQueryParamHook {
-  queryParamName: string
-  regex: RegExp
+interface IUseQueryParamResult {
+  queryParam: string | null
 }
 
 export default function useQueryParam({
-  queryParamName,
-  regex
-}: IQueryParamHook) {
-  const [searchParams, setSearchParams] = useSearchParams()
-  const queryParam = searchParams.get(queryParamName)
+  name,
+  regexPattern,
+  errorPagePath
+}: IUseQueryParam): IUseQueryParamResult {
+  const navigate = useNavigate()
+  const [searchParams, _] = useSearchParams()
+  const queryParam = searchParams.get(name)
 
   useEffect(() => {
     if (queryParam) {
-      if (!regex.test(queryParam)) {
-        // Redireccionar o mostrar error si el formato no es válido
-        console.error('Formato de query inválido')
-        // Opción: redireccionar a página de error o limpiar el parámetro
-        setSearchParams({})
+      if (!regexPattern.test(queryParam)) {
+        console.error('[queryParam] Invalid')
+        navigate(errorPagePath)
       }
     }
-  }, [queryParam, setSearchParams])
+  }, [queryParam])
 
   return { queryParam }
 }
