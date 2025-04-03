@@ -26,7 +26,7 @@ export default function HomePage() {
     if (playerId === '') return
 
     try {
-      console.log('Submit!', { playerId })
+      //console.log('Submit!', { playerId })
       navigate(`/profile?id=${encodeURIComponent(playerId)}`)
     } catch (error) {
       console.error(error)
