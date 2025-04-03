@@ -22,7 +22,7 @@ export default function useQueryParam({
   const queryParam = searchParams.get(name)
 
   useEffect(() => {
-    if (queryParam !== null) {
+    if (queryParam) {
       if (!regexPattern.test(queryParam)) {
         console.error('[queryParam] Invalid')
         navigate(errorPagePath)
