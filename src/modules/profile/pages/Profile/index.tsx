@@ -1,30 +1,43 @@
-import { useEffect, useState } from 'react'
-
 // Hooks
+import { useEffect, useState } from 'react'
 import useQueryParam from '@core/hooks/useQueryParam'
+
+// Services
+import { getProfileService } from '@profile/services/getProfile'
 
 // Components
 import Link from '@core/components/Link'
-//import Spinner from '@core/components/Spinner'
+import Spinner from '@core/components/Spinner'
 
-// Tpyes and interfaces
-import { IProfileJsonResponse } from '@profile/interfaces'
-import { getProfileService } from '@profile/services/getProfile'
+// Types
+import type { TErrorMessageState, TProfileState } from '@profile/types'
+
+// Interfaces
+import type { IJsonErrorResponse } from '@profile/interfaces'
+import type { IProfileJsonResponse } from '@profile/interfaces'
 
 export default function ProfilePage() {
+  // States
+  const [profileData, setProfileData] = useState<TProfileState>(undefined)
+  const [errorMessage, setErrorMessage] = useState<TErrorMessageState>(null)
+
+  // Query Param State
   const { queryParam: profileId } = useQueryParam({
     name: 'id',
     regexPattern: /^\d{2}-\d{7}$/,
     errorPagePath: '/profile/404'
   })
 
-  const [profileData, setProfileData] = useState<IProfileJsonResponse | null>(
-    null
-  )
-
   useEffect(() => {
-    const data = getProfileService(profileId as string)
-    setProfileData(data as any)
+    getProfileService(profileId as string).then(data => {
+      if (data && data.hasOwnProperty('error')) {
+        setErrorMessage(data as IJsonErrorResponse)
+        return
+      }
+
+      setProfileData(data as IProfileJsonResponse)
+      setErrorMessage({ error: '' } as IJsonErrorResponse)
+    })
   }, [])
 
   return (
@@ -33,10 +46,14 @@ export default function ProfilePage() {
       <Link to='/'>Ir a inicio</Link>
 
       <br />
-      <br />
-      <br />
 
-      <code>{JSON.stringify(profileData)}</code>
+      {typeof profileData === 'undefined' && errorMessage === null && (
+        <Spinner text='Loading...' />
+      )}
+
+      {errorMessage?.error ?
+        <p style={{ outline: '1px solid black' }}>{errorMessage?.error}</p>
+      : <code>{JSON.stringify(profileData)}</code>}
     </>
   )
 }

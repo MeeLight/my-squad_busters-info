@@ -41,6 +41,8 @@ export default defineConfig({
     compress: true,
     open: false,
     port: 5173,
+    host: '0.0.0.0',
+    strictPort: true,
     historyApiFallback: true,
     publicDir: {
       name: 'public',
