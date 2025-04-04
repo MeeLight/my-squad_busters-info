@@ -1,6 +1,6 @@
 export interface ICharacter {
   data: number
-  lvl: 3
+  lvl: number
   userCount: number
   materialC: number[]
   Name: string
