@@ -1,1 +1,0 @@
-export { XpIcon } from './XpIcon'

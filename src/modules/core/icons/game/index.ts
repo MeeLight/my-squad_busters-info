@@ -1,1 +1,0 @@
-export { CustomSpiralBasedOnSB } from './CustomSpiral'
