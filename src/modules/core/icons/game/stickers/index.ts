@@ -1,1 +1,0 @@
-export { ArcherSticker } from './ArcherSticker'

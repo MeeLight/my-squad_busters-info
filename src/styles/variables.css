@@ -14,11 +14,11 @@
 
   /* Colors */
   --msbi-default: #404040;
-  --msbi-primary: #f26bc9;
-  --msbi-secondary: #6b84f2;
-  --msbi-success: #6bf281;
-  --msbi-warning: #f2d96b;
-  --msbi-error: #fe4d4d;
+  --msbi-primary: #404040;
+  --msbi-secondary: #8b8b8b;
+  --msbi-success: #4d6afe;
+  --msbi-warning: #4d6afe;
+  --msbi-error: #4d6afe;
 
   /* Utilities */
   --msbi-outline: 1px solid rgba(0, 0, 0, 0.4);

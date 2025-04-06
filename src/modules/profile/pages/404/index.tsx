@@ -1,13 +1,12 @@
-// Layouts
-import CenterLayout from '@core/layouts/CenterLayout'
-
 // Components
-import ErrorMessageContainer from '@profile/components/ErrorMessageContainer'
+import Link from '@core/components/Link'
+//import Spinner from '@core/components/Spinner'
 
 export default function NotFoundProfilePage() {
   return (
-    <CenterLayout>
-      <ErrorMessageContainer errorMessage='Invalid id' />
-    </CenterLayout>
+    <>
+      <h1>Not Found Profile</h1>
+      <Link to='/'>Ir a inicio</Link>
+    </>
   )
 }

@@ -9,19 +9,16 @@ import NotFoundPage from '@app/pages/404/index'
 // Profile
 import ProfilePage from '@profile/pages/Profile/index'
 import NotFoundProfilePage from '@profile/pages/404/index'
-import BaseLayout from '@core/layouts/BaseLayout'
 
 export default function RouterProvider() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<BaseLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path='/about' element={<AboutPage />} />
+        <Route index element={<HomePage />} />
+        <Route path='/about' element={<AboutPage />} />
 
-          <Route path='/profile' element={<ProfilePage />} />
-          <Route path='/profile/404' element={<NotFoundProfilePage />} />
-        </Route>
+        <Route path='/profile' element={<ProfilePage />} />
+        <Route path='/profile/404' element={<NotFoundProfilePage />} />
 
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
