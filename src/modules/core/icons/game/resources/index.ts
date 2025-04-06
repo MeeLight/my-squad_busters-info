@@ -1,0 +1,1 @@
+export { XpIcon } from './XpIcon'

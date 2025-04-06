@@ -1,14 +1,13 @@
-import Link from '@core/components/Link'
+// Layouts
+import CenterLayout from '@core/layouts/CenterLayout'
 
-// Styles
-import styles from './index.module.css'
+// Components
+import ErrorMessageContainer from '@profile/components/ErrorMessageContainer'
 
-export default function NotFoundPage() {
+export default function NotFoundProfilePage() {
   return (
-    <main className={styles.notFoundContainer}>
-      <h1>404: No such page!</h1>
-
-      <Link to='/'>Go to home</Link>
-    </main>
+    <CenterLayout style={{ height: '100vh' }}>
+      <ErrorMessageContainer errorMessage='Page not found' />
+    </CenterLayout>
   )
 }
