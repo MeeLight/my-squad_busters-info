@@ -1,18 +1,6 @@
 // Interfaces
 import type { IProfileData, IProfileJsonResponse } from '@profile/interfaces'
 
-const getFormatValue = (value: number): string => {
-  const formatted = `${new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD'
-  }).format(value)}`
-
-  return formatted
-    .substring(1, formatted.length - 2)
-    .replace('.', '')
-    .replaceAll(',', '.')
-}
-
 export default class ProfileModel {
   public static getProfileData(data: IProfileJsonResponse): IProfileData {
     const parsedData: IProfileData = JSON.parse(data.jsonStr)
@@ -31,7 +19,7 @@ export default class ProfileModel {
       return '0'
     }
 
-    return `${getFormatValue(trophies)}`
+    return `${trophies}`
   }
 
   public static getGemsOfSeason(data: IProfileData): string {
@@ -41,7 +29,7 @@ export default class ProfileModel {
       return '0'
     }
 
-    return `${getFormatValue(gems)}`
+    return `${gems}`
   }
 
   public static getCurrentHammers(data: IProfileData): string {
@@ -51,7 +39,7 @@ export default class ProfileModel {
       return '0'
     }
 
-    return `${getFormatValue(hammers)}`
+    return `${hammers}`
   }
 
   public static getPinataSticks(data: IProfileData): string {
@@ -61,7 +49,7 @@ export default class ProfileModel {
       return '0'
     }
 
-    return `${getFormatValue(pinataStick)}`
+    return `${pinataStick}`
   }
 
   public static getStarTokens(data: IProfileData): string {
@@ -71,7 +59,7 @@ export default class ProfileModel {
       return '0'
     }
 
-    return `${getFormatValue(starTokens)}`
+    return `${starTokens}`
   }
 
   public static getTickets(data: IProfileData): string {
@@ -81,6 +69,6 @@ export default class ProfileModel {
       return '0'
     }
 
-    return `${getFormatValue(tickets)}`
+    return `${tickets}`
   }
 }
