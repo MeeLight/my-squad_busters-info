@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
+// Layouts
+import BaseLayout from '@core/layouts/BaseLayout'
+
 // ***** Pages
 // Root
 import HomePage from '@app/pages/HomePage/index'
@@ -14,13 +17,15 @@ export default function RouterProvider() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<HomePage />} />
-        <Route path='/about' element={<AboutPage />} />
+        <Route element={<BaseLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path='/about' element={<AboutPage />} />
 
-        <Route path='/profile' element={<ProfilePage />} />
-        <Route path='/profile/404' element={<NotFoundProfilePage />} />
+          <Route path='/profile' element={<ProfilePage />} />
+          <Route path='/profile/404' element={<NotFoundProfilePage />} />
 
-        <Route path='*' element={<NotFoundPage />} />
+          <Route path='*' element={<NotFoundPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )
