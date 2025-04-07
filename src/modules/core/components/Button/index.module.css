@@ -1,7 +1,18 @@
 .button {
+	height: 100%;
   padding: 0.5rem 1rem;
   background-color: black;
   color: rgba(255, 255, 255, 0.8);
   outline: 1px solid black;
+	font-size: clamp(1rem, 1.35vw, 2vw);
   border-radius: 0.2rem;
 }
+
+
+@media (width < 640px) {
+	.button  {
+		text-align: center;
+		font-size: clamp(1rem, 1.8vw, 2vw);
+  }
+}
+

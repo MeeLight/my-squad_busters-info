@@ -1,0 +1,60 @@
+.layout {
+  width: 70%;
+  margin: 2.5rem auto 0 2rem;
+  outline: 2px dashed var(--msbi-default);
+  align-items: start;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.inline,
+.inlineLink,
+.inlineGhLink {
+  display: inline;
+}
+
+.inlineLink,
+.inlineGhLink {
+  transition: opacity 500ms ease;
+}
+
+.inlineGhLink {
+  width: max-content;
+  margin: 0.2rem 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.inlineLink:hover,
+.inlineGhLink:hover {
+  opacity: 0.85;
+}
+
+.aboutText {
+  text-wrap: pretty;
+  text-align: justify;
+  font-size: 1.3rem;
+}
+
+.apiDev {
+  text-align: justify;
+  font-size: 1.35rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* sm */
+@media (width < 640px) {
+  .layout {
+    width: 65%;
+    align-items: center;
+    margin: 2rem auto;
+  }
+
+  .aboutText {
+    font-size: 1.15rem;
+  }
+}

@@ -1,0 +1,18 @@
+.card {
+  width: 100%;
+  /* max-width: 25rem; */
+	margin: 0 auto;
+  margin-inline: auto;
+  background-color: var(--msbi-gray);
+  gap: 2rem;
+}
+
+/* sm */
+@media (width < 640px) {
+  .card {
+    width: 65%;
+    max-width: inherit;
+    align-items: center;
+    justify-content: center;
+  }
+}

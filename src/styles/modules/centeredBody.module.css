@@ -1,0 +1,39 @@
+.centeredBody,
+.centeredLayout {
+  width: 100%;
+  max-width: 80%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: rgb(241, 241, 241);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: start;
+}
+
+.centeredLayout {
+	height: calc(100vh - 12rem);
+	width: 100%;
+  background-color: transparent;
+	align-items: center;
+  justify-content: center;
+	padding: 2rem 0;
+}
+
+/* sm */
+@media (width < 640px) {
+  .centeredLayout,
+  .centeredBody {
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+	.centeredLayout {
+		height: calc(100vh - 8rem);
+		margin: 0 auto;
+		background-color: transparent;
+	}
+}

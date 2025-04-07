@@ -1,6 +1,27 @@
 .field {
-	caret-color: black;
-  padding: 0.5rem 0.35rem;
+  color: var(--msbi-default);
+  caret-color: var(--msbi-default);
+  padding: 0.8rem 1rem;
   border-radius: 0.2rem;
-  outline: 1px solid black;
+	font-weight: bold;
+  font-size: clamp(1.2rem, 1.6vw, 2vw);
+  outline: 2px solid var(--msbi-default);
+	letter-spacing: 0.1rem;
+}
+
+.field::placeholder {
+	letter-spacing: 0.5px;
+
+}
+
+.field::selection {
+  background-color: rgba(210, 210, 210, 0.8);
+}
+
+@media (width < 640px) {
+  .field {
+    width: 50%;
+		padding: 0.8rem 1rem;
+    font-size: 1.2rem;
+  }
 }

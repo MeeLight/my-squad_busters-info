@@ -1,0 +1,10 @@
+.cardValue {
+  font-size: clamp(2rem, 2vw, 1.5rem);
+}
+
+/* sm */
+@media (width < 640px) {
+  .cardValue {
+    font-size: clamp(1.8rem, 2vw, 1.5rem);
+  }
+}

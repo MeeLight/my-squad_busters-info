@@ -1,0 +1,135 @@
+@keyframes modalBlurAnimation {
+  from {
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0);
+  }
+
+  to {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+  }
+}
+
+@keyframes modalSlideAnimation {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.drawerListHidden {
+  width: 0;
+}
+
+.navDrawer,
+.navDrawerHidden {
+  display: none;
+}
+
+/* sm */
+@media (width < 640px) {
+  .overlay,
+  .overlayHidden {
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+    animation: modalBlurAnimation 300ms;
+  }
+
+  .drawerNavBrand {
+    min-width: 8rem;
+    width: 8rem;
+    margin: 2rem 0 0 0;
+    font-size: clamp(1.50rem, 2vw, 2rem);
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .overlay {
+    width: 100%;
+  }
+
+  .overlayHidden {
+    width: 0;
+    background: transparent;
+    backdrop-filter: none;
+    animation: none;
+    transition:
+      background 500ms ease,
+      backdrop-filter 500ms ease;
+  }
+
+  .drawerList {
+    width: 65dvw;
+    margin: 2rem auto 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .drawerListHidden {
+    width: 0;
+  }
+
+  .drawerListItem,
+  .drawerActiveListItem {
+    width: 65dvw;
+    padding: 1rem 0;
+    text-align: center;
+    transition: background-color ease 500ms;
+  }
+
+  .drawerListItemHidden,
+  .drawerActiveListItemHidden {
+    width: 0;
+    padding: 1rem 0;
+    transition: background-color ease 500ms;
+  }
+
+  .drawerActiveListItem {
+    border: none;
+    background-color: var(--msbi-primary);
+    color: #ffffff;
+  }
+
+  .drawerListItem:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .navDrawer,
+  .navDrawerHidden {
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: start;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    z-index: 3;
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: -8px 0 20px rgba(0 0 0 / 0.1);
+    animation: modalSlideAnimation 300ms;
+  }
+
+  .navDrawer {
+    width: 65dvw;
+  }
+
+  .navDrawerHidden {
+    left: -25%;
+    width: 0;
+    animation: none;
+    transition: all 500ms ease;
+  }
+}
