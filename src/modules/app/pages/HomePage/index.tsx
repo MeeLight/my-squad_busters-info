@@ -52,9 +52,7 @@ export default function HomePage() {
             name='player_id'
             id='player_id_field'
             value={playerId}
-            minLength={10}
-            maxLength={10}
-						placeholder='Your ID (10 digits)'
+						placeholder='Your ID'
             onChange={event => onChange(event)(setPlayerId)}
             required
           />

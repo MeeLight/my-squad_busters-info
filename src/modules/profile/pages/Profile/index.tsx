@@ -90,7 +90,8 @@ export default function ProfilePage() {
   // Query Param State
   const { queryParam: profileId } = useQueryParam({
     name: 'id',
-    regexPattern: /^\d{2}-\d{7}$/,
+    //regexPattern: /^\d{2}-\d{7}$/,
+		regexPattern: /^[\s\S]*$/,
     errorPagePath: '/profile/404'
   })
 
