@@ -27,7 +27,9 @@ export default defineConfig({
     alias: {
       '@core': resolve(__dirname, './src/modules/core'),
       '@icons': resolve(__dirname, './src/modules/core/icons'),
+      '@styleModules': resolve(__dirname, './src/styles/modules'),
       '@app': resolve(__dirname, './src/modules/app'),
+      '@images': resolve(__dirname, './src/assets/images'),
       '@profile': resolve(__dirname, './src/modules/profile')
     }
   },

@@ -15,20 +15,12 @@
   /* Colors */
   --msbi-gray: rgba(230, 230, 230, 0.8);
   --msbi-default: #404040;
-<<<<<<< HEAD
   --msbi-primary: #f26bc9;
   --msbi-secondary: #1a3edb;
   --msbi-success: #6bf281;
   --msbi-warning: #f2d96b;
   --msbi-error: #fe4d4d;
 	--msbi-gold: #e9b629;
-=======
-  --msbi-primary: #404040;
-  --msbi-secondary: #8b8b8b;
-  --msbi-success: #4d6afe;
-  --msbi-warning: #4d6afe;
-  --msbi-error: #4d6afe;
->>>>>>> 101de2e (Revert "feature: paginas de error, level and username card" (#8))
 
   /* Utilities */
   --msbi-outline: 1px solid rgba(0, 0, 0, 0.4);

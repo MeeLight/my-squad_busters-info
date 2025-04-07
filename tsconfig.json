@@ -18,6 +18,8 @@
 		"paths": {
 			"@core/*": ["./src/modules/core/*"],
 			"@icons/*": ["./src/modules/core/icons/*"],
+			"@styleModules/*": ["./src/styles/modules/*"],
+			"@images/*": ["./src/assets/images/*"],
 			"@app/*": ["./src/modules/app/*"],
 			"@profile/*": ["./src/modules/profile/*"]
 		}

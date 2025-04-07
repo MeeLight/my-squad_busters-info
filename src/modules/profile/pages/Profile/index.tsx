@@ -11,7 +11,6 @@ import ProfileModel from '@profile/model'
 // Services
 import { getProfileService } from '@profile/services/getProfile'
 
-<<<<<<< HEAD
 // Layouts
 import CenterLayout from '@core/layouts/CenterLayout'
 
@@ -29,17 +28,12 @@ import { CustomSpiralBasedOnSB } from '@core/icons/game'
 
 // Styles
 import styles from './index.module.css'
-=======
-// Components
-import Link from '@core/components/Link'
-import Spinner from '@core/components/Spinner'
->>>>>>> 101de2e (Revert "feature: paginas de error, level and username card" (#8))
 
 // Types
 import type { TErrorMessageState, TProfileState } from '@profile/types'
 
 // Interfaces
-import type { IJsonErrorResponse } from '@profile/interfaces'
+import type { IJsonErrorResponse, IProfileData } from '@profile/interfaces'
 import type { IProfileJsonResponse } from '@profile/interfaces'
 
 export default function ProfilePage() {
@@ -89,12 +83,9 @@ export default function ProfilePage() {
   }
 
   // States
-  const [profileData, setProfileData] = useState<TProfileState>(undefined)
+  const [data, setData] = useState<TProfileState>(undefined)
   const [errorMessage, setErrorMessage] = useState<TErrorMessageState>(null)
-<<<<<<< HEAD
   const [profileData, setProfileData] = useState<IProfileData | undefined>()
-=======
->>>>>>> 101de2e (Revert "feature: paginas de error, level and username card" (#8))
 
   // Query Param State
   const { queryParam: profileId } = useQueryParam({
@@ -104,25 +95,13 @@ export default function ProfilePage() {
   })
 
   useEffect(() => {
-<<<<<<< HEAD
     getProfileService(profileId as string).then(parsedData => {
-      if (typeof parsedData === 'undefined') {
-        location.href = '/profile/404'
-      }
-
-      if (parsedData && parsedData.hasOwnProperty('error')) {
-        setErrorMessage(parsedData as IJsonErrorResponse)
-=======
-    getProfileService(profileId as string).then(data => {
       if (data && data.hasOwnProperty('error')) {
-        setErrorMessage(data as IJsonErrorResponse)
->>>>>>> 101de2e (Revert "feature: paginas de error, level and username card" (#8))
+        setErrorMessage(parsedData as IJsonErrorResponse)
         return
       }
 
-      setProfileData(data as IProfileJsonResponse)
       setErrorMessage({ error: '' } as IJsonErrorResponse)
-<<<<<<< HEAD
 
       const newParsedData = parsedData as IProfileJsonResponse
 
@@ -175,25 +154,5 @@ export default function ProfilePage() {
         </CenterLayout>
       }
     </Fragment>
-=======
-    })
-  }, [])
-
-  return (
-    <>
-      <h1>My Profile - {profileId}</h1>
-      <Link to='/'>Ir a inicio</Link>
-
-      <br />
-
-      {typeof profileData === 'undefined' && errorMessage === null && (
-        <Spinner text='Loading...' />
-      )}
-
-      {errorMessage?.error ?
-        <p style={{ outline: '1px solid black' }}>{errorMessage?.error}</p>
-      : <code>{JSON.stringify(profileData)}</code>}
-    </>
->>>>>>> 101de2e (Revert "feature: paginas de error, level and username card" (#8))
   )
 }
