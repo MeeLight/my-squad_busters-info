@@ -108,6 +108,11 @@ em {
   color: inherit;
 }
 
+strong {
+	font-weight: bold;
+	display: block;
+}
+
 /* Evitamos problemas con los pseudoelementos de quotes */
 blockquote:before,
 blockquote:after,

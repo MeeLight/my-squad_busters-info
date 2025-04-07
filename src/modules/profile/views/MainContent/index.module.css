@@ -1,0 +1,66 @@
+.card {
+  color: #ffffff;
+  background-color: var(--msbi-secondary);
+}
+
+.trophiesRowContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.xpIcon {
+  height: 76pt;
+  width: 70pt;
+}
+
+.xpContainer,
+.trophiesRowContainer {
+  align-items: center;
+  justify-content: center;
+}
+
+.xpContainer {
+  gap: 1rem;
+}
+
+.infoColContainer {
+  height: 100%;
+  margin: -1.85rem 0 0 0;
+  gap: 2rem;
+}
+
+.trophiesRowContainer {
+  width: 100%;
+}
+
+.trophiesColContainer {
+  gap: 0.5rem;
+}
+
+.trophiesRowContainer {
+  flex-direction: row;
+  gap: 0.8rem;
+  align-items: start;
+  justify-content: start;
+}
+
+.level {
+  font-size: clamp(1.6rem, 2vw, 1.5rem);
+}
+
+/* sm */
+@media (width < 640px) {
+  .infoColContainer {
+    margin: 0;
+  }
+
+  .xpIcon {
+    height: 66pt;
+    width: 60pt;
+  }
+
+  .xpContainer {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+}

@@ -1,6 +1,4 @@
-import type { IProfileData } from './profileData'
-
 export interface IProfileJsonResponse {
-  jsonStr: IProfileData
+  jsonStr: string
   playerName: string
 }

@@ -1,0 +1,36 @@
+:root {
+  --gray: rgba(0, 0, 0, 0.15);
+}
+
+.card,
+.subtitle {
+  color: var(--msbi-default);
+}
+
+.card {
+  justify-content: center;
+	gap: 2.5rem;
+}
+
+.colContainer {
+	gap: 1rem;
+}
+
+.rowContainer {
+	gap: 1.35rem;
+}
+
+.title {
+  border-bottom: 3px solid var(--gray);
+}
+
+/* sm */
+@media (width < 640px) {
+	.card {
+		gap: 2rem;
+	}
+
+  .rowContainer {
+    flex-direction: row;
+  }
+}

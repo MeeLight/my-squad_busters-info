@@ -1,0 +1,20 @@
+.rowContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* sm */
+@media (width < 640px) {
+	/* ¡Solucionar esto! Crear una clase específica para que
+	 * la vista principal que contiene la tarjeta tenga el comportamiento
+	 * específico, que al ser responsive tenga un flex-direction: column
+	 *
+	 * NOTA: esto para que el componente padre no tenga este error
+	 */
+  .rowContainer {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

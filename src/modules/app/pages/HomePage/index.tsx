@@ -1,65 +1,69 @@
-import { useEffect, useState } from 'react'
+import { FormEvent, useState } from 'react'
 
 // React Router Dom
 import { useNavigate } from 'react-router-dom'
 
+// Controllers
+import { onSubmit, onChange } from '@app/controllers/form'
+
+// Layouts
+import BodyLayout from '@core/layouts/BodyLayout'
+
 // Components
 import Input from '@core/components/Input'
 import Button from '@core/components/Button'
+import RowContainer from '@core/components/RowContainer'
+import ColContainer from '@core/components/ColContainer'
 
-// Types and interfaces
-import type { FormEvent } from 'react'
+// Icons
+import { SearchIcon } from '@core/icons/repo'
 
-// Stylesheet
+// Images
+import chickenClassicWebp from '@images/chicken_classic.webp'
+
+// Styles
 import styles from './index.module.css'
 
 export default function HomePage() {
   const navigate = useNavigate()
 
   // States
-  const [playerId, setPlayerId] = useState('16-2507692')
-
-  // Events
-  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-
-    if (playerId === '') return
-
-    try {
-      //console.log('Submit!', { playerId })
-      navigate(`/profile?id=${encodeURIComponent(playerId)}`)
-    } catch (error) {
-      console.error(error)
-    }
-  }
-
-  useEffect(() => {
-    //console.log('Hello world!')
-  }, [])
-
-  /* useEffect(() => {
-    console.log(fields)
-  }, [fields]) */
+  const [playerId, setPlayerId] = useState('')
 
   return (
-    <>
-      <h1>Seach your account:</h1>
-
-      <form onSubmit={event => onSubmit(event)} className={styles.form}>
-        <Input
-          type='text'
-          name='player_id'
-          id='player_id_field'
-          value={playerId}
-          autoComplete='off'
-          onChange={event => {
-            const value = event.target.value
-            setPlayerId(value)
-          }}
+    <BodyLayout customClassName={styles.layout}>
+      <RowContainer customClassName={styles.rowContainer}>
+        <img
+          src={chickenClassicWebp}
+          alt='Chicken Classic'
+          className={styles.image}
         />
+      </RowContainer>
 
-        <Button type='submit'>Search</Button>
-      </form>
-    </>
+      <ColContainer customClassName={styles.colContainer}>
+        <h1 className={styles.title}>Find my account:</h1>
+
+        <form
+          onSubmit={event => onSubmit(event)(playerId, navigate)}
+          className={styles.form}
+        >
+          <Input
+            type='text'
+            name='player_id'
+            id='player_id_field'
+            value={playerId}
+            minLength={10}
+            maxLength={10}
+						placeholder='Your ID (10 digits)'
+            onChange={event => onChange(event)(setPlayerId)}
+            required
+          />
+
+          <Button type='submit'>
+            <SearchIcon fill='#ffffff' />
+          </Button>
+        </form>
+      </ColContainer>
+    </BodyLayout>
   )
 }
